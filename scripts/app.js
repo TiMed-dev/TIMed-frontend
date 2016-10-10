@@ -50,6 +50,41 @@
     url: '/resultados',
     parent: 'dashboard',
     templateUrl: 'views/dashboard/resultados.html'
+  })
+  .state('files', {
+    url: '/files',
+    parent: 'dashboard',
+    templateUrl: 'views/dashboard/files.html'
+  })
+  .state('informacion1', {
+    url: '/informacion/1',
+    parent: 'dashboard',
+    templateUrl: 'views/dashboard/informacion1.html'
+  })
+  .state('informacion2', {
+    url: '/informacion/2',
+    parent: 'dashboard',
+    templateUrl: 'views/dashboard/informacion2.html'
+  })
+  .state('informacion3', {
+    url: '/informacion/3',
+    parent: 'dashboard',
+    templateUrl: 'views/dashboard/informacion3.html'
+  })
+  .state('resultados1', {
+    url: '/resultados/1',
+    parent: 'dashboard',
+    templateUrl: 'views/dashboard/resultados1.html'
+  })
+  .state('resultados2', {
+    url: '/resultados/2',
+    parent: 'dashboard',
+    templateUrl: 'views/dashboard/resultados2.html'
+  })
+  .state('resultados3', {
+    url: '/resultados/3',
+    parent: 'dashboard',
+    templateUrl: 'views/dashboard/resultados3.html'
   });
 
 });
