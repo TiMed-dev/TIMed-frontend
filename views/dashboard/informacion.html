@@ -512,7 +512,7 @@
   var str=$( this ).serializeArray();
     $.post("/api/analyze",
     {
-        info:str
+        info:JSON.stringify(str);
     },
     function(data, status){
         alert("Data: " + data + "\nStatus: " + status);
