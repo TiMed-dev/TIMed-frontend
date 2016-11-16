@@ -26,7 +26,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textEdad">Edad</label>  
   <div class="col-md-2">
-  <input id="textEdad" name="textEdad" type="number" placeholder="" class="form-control input-md" required="" value="30">
+  <input id="textEdad" name="textEdad" type="number" placeholder="" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -37,8 +37,8 @@
  
   <div class="col-md-4">
     <select id="selectSexo" name="selectSexo" class="form-control">
-      <option value="1">Femenino</option>
-      <option value="2">Masculino</option>
+      <option value="Femenino">Femenino</option>
+      <option value="Masculino">Masculino</option>
     </select>
   </div>
 </div>
@@ -509,7 +509,7 @@
 
   $( "form" ).on( "submit", function( event ) {
   event.preventDefault();
-  var str=$( this ).serialize();
+  var str=$( this ).serializeArray();
     $.post("/api/analyze",
     {
         info:str
