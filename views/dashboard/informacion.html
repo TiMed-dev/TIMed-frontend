@@ -1,21 +1,21 @@
 <div id="forma">
-	<a ui-sref="inicio" class="pull-right btn btn-primary btn-outline btn-rounded">Volver a inicio</a>
+  <a ui-sref="inicio" class="pull-right btn btn-primary btn-outline btn-rounded">Volver a inicio</a>
     <a ui-sref="files" class="pull-right btn btn-primary btn-outline btn-rounded">Cargar archivos</a>
-	<h2>Información <small></small></h2>
-	<span class="glyphicon glyphicon-search bg-fade"></span>
-	<div class="jumbotron">
-		<div class="container">
+  <h2>Información <small></small></h2>
+  <span class="glyphicon glyphicon-search bg-fade"></span>
+  <div class="jumbotron">
+    <div class="container">
 
 
     <div class="page-header">
       <h2>Artritis Reumatoide</h2>
     </div>
-			<div class="row">
+      <div class="row">
 
 
 
-				
-	<form class="form-horizontal">
+        
+  <form class="form-horizontal">
 <fieldset>
 
 
@@ -478,7 +478,7 @@
       <div class="form-group">
         <label class="col-md-3 control-label" for="singlebutton"></label>
         <div class="col-md-3">
-          <button id="singlebutton" name="singlebutton" style="height:50px; width:420px" class="btn btn-info" ui-sref="resultados">Analizar</button>
+          <button id="singlebutton" name="singlebutton" style="height:50px; width:420px" class="btn btn-info"> Analizar</button>
         </div>
       </div>
 
@@ -486,29 +486,43 @@
 
 </fieldset>
 </form>
-			</div>
+      </div>
 
-			<!-- Trigger the modal with a button -->
+      <!-- Trigger the modal with a button -->
 
 
 
-			</div>
+      </div>
 
-		</div>
-	</div>
+    </div>
+  </div>
 </div>
 
 <script>
-function demoDisplay() {
-    document.getElementById("form").style.display = "none";
-}
+  function demoDisplay() {
+      document.getElementById("form").style.display = "none";
+  }
 
-function demoVisibility() {
-    document.getElementById("rest").style.visibility = "block";
-}
+  function demoVisibility() {
+      document.getElementById("rest").style.visibility = "block";
+  }
+
+  $( "form" ).on( "submit", function( event ) {
+  event.preventDefault();
+  var str=$( this ).serialize();
+    $.post("/api/analyze",
+    {
+        info:str
+    },
+    function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+        demoDisplay();
+        demoVisibility();
+    });
+  });
 </script>
 
-<div id="rest" style="display:\"none\"">
+<div id="rest" style="display:none">
     <a ui-sref="inicio" class="pull-right btn btn-primary btn-outline btn-rounded">Volver a inicio</a>
     <h2>Resultados <small></small></h2>
     <span class="glyphicon glyphicon-search bg-fade"></span>
